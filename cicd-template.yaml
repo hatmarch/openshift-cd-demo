@@ -347,7 +347,8 @@ objects:
             curl -s https://raw.githubusercontent.com/OpenShiftDemos/gogs-openshift-docker/master/openshift/gogs-persistent-template.yaml |sed 's#sql\:9.5#sql\:9.6#g'| oc new-app -f - \
                   --param=GOGS_VERSION=0.11.34 \
                   --param=HOSTNAME=$GOGS_HOSTNAME \
-                  --param=SKIP_TLS_VERIFY=true
+                  --param=SKIP_TLS_VERIFY=true \
+                  --param=DATABASE_VERSION=latest
             fi
             
             sleep 5
